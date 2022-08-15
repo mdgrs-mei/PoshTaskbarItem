@@ -2,6 +2,8 @@
 
 # PoshTaskbarItem
 
+[![GitHub license](https://img.shields.io/github/license/mdgrs-mei/PoshTaskbarItem)](https://github.com/mdgrs-mei/PoshTaskbarItem/blob/main/LICENSE)
+
 [![Pester Test](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml/badge.svg)](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml)
 
 PoshTaskbarItem is a PowerShell module that helps you make a simple UI for your script on the Windows taskbar.
