@@ -1,0 +1,14 @@
+name: Pester Test
+on: push
+
+jobs:
+  pester-test:
+    name: Windows Latest
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run tests
+        shell: pwsh
+        run: |
+          & Tests\RunTests.ps1
