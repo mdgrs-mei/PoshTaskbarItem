@@ -40,8 +40,7 @@ function UpdateUi
 
 Show-TaskbarItem $ti
 ```
-
-![Countdown](https://user-images.githubusercontent.com/81177095/184651151-16f5826c-b298-4474-9675-d58b05d9935a.gif)
+![Countdown](https://user-images.githubusercontent.com/81177095/184890354-ad60b9cd-b918-41ad-b2a8-bd36b9e0c506.gif)
 
 ## Requirements
 
@@ -52,7 +51,7 @@ This module has been tested on:
 
 ## Installation
 
-PoshTaskbarItem is available on the PowerShell Gallery. You can install the module with the following command for example:
+*PoshTaskbarItem* is available on the PowerShell Gallery. You can install the module with the following command:
 
 ```powershell
 Install-Module -Name PoshTaskbarItem -Scope CurrentUser
@@ -86,7 +85,7 @@ $ti = New-TaskbarItem
 
 ### Description
 
-![Description](./Docs/Description.png)
+![Description](https://user-images.githubusercontent.com/81177095/184888853-8fa8ada8-c7a4-4845-ad49-817cd8fe6338.png)
 
 ```powershell
 Set-TaskbarItemDescription $ti "Description is shown here"
@@ -96,7 +95,7 @@ Description is a text displayed on top of the taskbar preview window. It is show
 
 ### Thumb Button
 
-![ThumbButton](./Docs/ThumbButton.png)
+![ThumbButton](https://user-images.githubusercontent.com/81177095/184888921-283873ae-a1a6-4505-a656-022be39c04c7.png)
 
 ```powershell
 $thumbButton = New-TaskbarItemThumbButton $ti -Description "Increment Badge Counter" -IconResourcePath "imageres.dll" -IconResourceIndex 101 -OnClicked {
@@ -109,7 +108,7 @@ ThumbButtons are the buttons displayed at the bottom of the preview window. You 
 
 ### Overlay Badge
 
-![OverlayBadge](./Docs/OverlayBadge.png)
+![OverlayBadge](https://user-images.githubusercontent.com/81177095/184888975-5f6d0a5b-7120-4b42-8130-36c92ed317f3.png)
 
 ```powershell
 Set-TaskbarItemOverlayBadge $ti -Text "2"
@@ -119,7 +118,7 @@ OverlayBadge is a text badge displayed on the taskbar icon. The size of the badg
 
 ### Overlay Icon
 
-![OverlayIcon](./Docs/OverlayIcon.png)
+![OverlayIcon](https://user-images.githubusercontent.com/81177095/184889028-d18a7476-9a9b-4d6f-9a47-2ff8f3bbc506.png)
 
 ```powershell
 Set-TaskbarItemOverlayIcon $ti -IconResourcePath imageres.dll -IconResourceIndex 79
@@ -129,7 +128,7 @@ Instead of a text badge, you can also show an image as an overlay icon.
 
 ### Icon Flashing
 
-![IconFlashing](./Docs/IconFlashing.png)
+![IconFlashing](https://user-images.githubusercontent.com/81177095/184889102-4b12a6d6-6a14-4189-aca5-541e51ce677d.png)
 
 ```powershell
 Start-TaskbarItemFlashing $ti -Count 3
