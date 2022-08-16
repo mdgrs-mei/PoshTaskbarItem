@@ -3,6 +3,8 @@
 # PoshTaskbarItem
 
 [![GitHub license](https://img.shields.io/github/license/mdgrs-mei/PoshTaskbarItem)](https://github.com/mdgrs-mei/PoshTaskbarItem/blob/main/LICENSE)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/p/PoshTaskbarItem)](https://www.powershellgallery.com/packages/PoshTaskbarItem)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PoshTaskbarItem)](https://www.powershellgallery.com/packages/PoshTaskbarItem)
 
 [![Pester Test](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml/badge.svg)](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml)
 
