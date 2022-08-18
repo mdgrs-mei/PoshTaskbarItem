@@ -138,11 +138,11 @@ Stop-TaskbarItemFlashing $ti
 
 You can flash the taskbar icon to get more attention of the user.
 
-### Changing Application Icon
+### Changing Application Icons
 
-![AppIcon](./Docs/AppIcon.png)
+![AppIcon](https://user-images.githubusercontent.com/81177095/185406314-b1657a74-fc2f-44a2-8d45-04639bf2f6be.png)
 
-If you run a script that uses *PoshTaskbarItem*, the PowerShell icon is shown on the taskbar by default. If you want to assign a new icon for your script, you have to create a shortcut that runs your script. You would also want to hide the PowerShell console so the command to create the shortcut will be like this:
+If you run a script that uses *PoshTaskbarItem*, the PowerShell icon is shown on the taskbar by default. If you want to assign a new icon to your script, you have to create a shortcut that runs your script. You would also want to hide the PowerShell console so the command to create the shortcut will be like this:
 
 ```powershell
 New-TaskbarItemShortcut -Path "D:\YourApp.lnk" -IconResourcePath "imageres.dll" -IconResourceIndex 144 -TargetPath "powershell.exe" -Arguments "-ExecutionPolicy Bypass -WindowStyle Hidden -File D:\YourScript.ps1" -WindowStyle Minimized
