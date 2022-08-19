@@ -148,7 +148,15 @@ If you run a script that uses *PoshTaskbarItem*, the PowerShell icon is shown on
 New-TaskbarItemShortcut -Path "D:\YourApp.lnk" -IconResourcePath "imageres.dll" -IconResourceIndex 144 -TargetPath "powershell.exe" -Arguments "-ExecutionPolicy Bypass -WindowStyle Hidden -File D:\YourScript.ps1" -WindowStyle Minimized
 ```
 
-## Help and More Examples
+### IconResourcePath
+
+Some of the functions take `IconResourcePath` and `IconResourceIndex` parameters to specify icon images. For `IconResourcePath`, you can use a relative path from the current directory, a relative path from `$env:PATH` or full path to a file that contains icon resources. The supported files are `.dll`, `.exe`, `.ico` or image files (`.png`, `.bmp`, `.tif`, `.gif` and `.jpg`). Depending on the function, image files are converted to `.ico` files which are placed next to the original image files. `IconResourceIndex` is a zero-based index value that specifies which one to use in case the resource file has multiple icon resources. 
+
+On Windows 10 or 11, `imageres.dll` or `shell32.dll` has a lot of useful icons. You can see what kind of icons they have from the 'Change Icon' button in the shortcut property.
+
+![IconResource](./Docs/IconResource.png)
+
+## Help and more Examples
 
 `Get-Command` can list all the available functions in the module:
 
