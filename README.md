@@ -114,7 +114,7 @@ ThumbButtons are the buttons displayed at the bottom of the preview window. You 
 Set-TaskbarItemOverlayBadge $ti -Text "2"
 ```
 
-OverlayBadge is a text badge displayed on the taskbar icon. The size of the badge and the font are changeable by parameters but 2 characters might be the maximum considering the space.
+OverlayBadge is a text badge displayed on the taskbar icon. The badge size and the font size are changeable by parameters but 2 characters might be the maximum considering the space.
 
 ### Overlay Icon
 
@@ -158,7 +158,7 @@ On Windows 10 or 11, `imageres.dll` or `shell32.dll` has a lot of useful icons. 
 
 ### Timer Function
 
-`Show-TaskbarItem` function does not return until the taskbar item is closed so if you need to do something periodically while the window is open, you have to use the Timer Function.
+`Show-TaskbarItem` function does not return until the taskbar item window is closed so if you need to do something periodically while the window is open, you have to use the Timer Function.
 
 ```powershell
 Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
