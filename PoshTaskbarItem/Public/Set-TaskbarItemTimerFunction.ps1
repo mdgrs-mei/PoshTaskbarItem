@@ -1,18 +1,18 @@
 ﻿<#
 .SYNOPSIS
-Sets a function called repeatedly.
+Sets a function called periodically.
 
 .DESCRIPTION
-Sets a function called repeatedly while the taskbar item is shown.
+Sets a function called periodically while the taskbar item is shown. The function is called on the UI thread and it should not do anything that takes long time to complete not to block the user interaction.
 
 .PARAMETER InputObject
 TaskbarItem object.
 
 .PARAMETER ScriptBlock
-ScriptBlock to be executed. The script block is called in the UI thread.
+ScriptBlock to be executed.
 
 .PARAMETER IntervalInMillisecond
-Interval millisecond where the script block is called.
+Interval millisecond where the function is called. The function is not guaranteed to be executed exactly when the time interval occurs, but it is guaranteed to not be executed before the time interval occurs.
 
 .INPUTS
 PSCustomObject. An object that represents a TaskbarItem.
