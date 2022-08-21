@@ -156,6 +156,18 @@ On Windows 10 or 11, `imageres.dll` or `shell32.dll` has a lot of useful icons. 
 
 ![IconResource](https://user-images.githubusercontent.com/81177095/185643184-e4987ab5-784f-4d3a-9a3f-fc8686c32ff6.png)
 
+### Timer Function
+
+`Show-TaskbarItem` function does not return until the taskbar item is closed so if you need to do something periodically while the window is open, you have to use the Timer Function.
+
+```powershell
+Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
+    Write-Host "Tick"
+}
+```
+
+The Timer Function is called on the UI thread with the interval time specified by a parameter. The function is not guaranteed to be executed exactly when the time interval occurs, but it is guaranteed to not be executed before the time interval occurs. Because it is called on the UI thread, it should not do anything that takes long time to complete.
+
 ## Help and more Examples
 
 `Get-Command` can list all the available functions in the module:
