@@ -74,20 +74,20 @@ function New-TaskbarItemJumpTask
 
     process
     {
-        if ($IconResourcePath)
-        {
-            $iconResourceFullPath = GetIconResourceFullPath $IconResourcePath
-        }
-
         $shellJumpTask = New-Object System.Windows.Shell.JumpTask
         $shellJumpTask.Title = $Title
         $shellJumpTask.Description = $Description
-        $shellJumpTask.IconResourcePath = $iconResourceFullPath
-        $shellJumpTask.IconResourceIndex = $IconResourceIndex
         $shellJumpTask.ApplicationPath = $ApplicationPath
         $shellJumpTask.Arguments = $Arguments
         $shellJumpTask.WorkingDirectory = $WorkingDirectory
         $shellJumpTask.CustomCategory = $CustomCategory
+
+        if ($IconResourcePath)
+        {
+            $iconResourceFullPath = GetIconResourceFullPath $IconResourcePath
+            $shellJumpTask.IconResourcePath = $iconResourceFullPath
+            $shellJumpTask.IconResourceIndex = $IconResourceIndex
+        }
 
         $jumpTask = [PSCustomObject]@{
             JumpTask = $shellJumpTask
