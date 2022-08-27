@@ -60,10 +60,7 @@ function New-TaskbarItem
         $nodeReader = (New-Object System.Xml.XmlNodeReader $xaml)
         $window = [System.Windows.Markup.XamlReader]::Load($nodeReader)
 
-        if ($Title)
-        {
-            $window.Title = $Title
-        }
+        $window.Title = $Title
 
         if ($IconResourcePath)
         {
