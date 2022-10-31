@@ -36,7 +36,6 @@ New-TaskbarItem -IconResourcePath .\icon.png
 function New-TaskbarItem
 {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
-    [CmdletBinding()]
     [OutputType([PSCustomObject])]
     param
     (
