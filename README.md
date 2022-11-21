@@ -98,7 +98,7 @@ Description is a text displayed on top of the taskbar preview window. It is show
 ![ThumbButton](https://user-images.githubusercontent.com/81177095/184888921-283873ae-a1a6-4505-a656-022be39c04c7.png)
 
 ```powershell
-$thumbButton = New-TaskbarItemThumbButton $ti -Description "Increment Badge Counter" -IconResourcePath "imageres.dll" -IconResourceIndex 101 -OnClicked {
+$thumbButton = New-TaskbarItemThumbButton -Description "Increment Badge Counter" -IconResourcePath "imageres.dll" -IconResourceIndex 101 -OnClicked {
     Write-Host "Clicked."
 }
 Add-TaskbarItemThumbButton $ti $thumbButton
