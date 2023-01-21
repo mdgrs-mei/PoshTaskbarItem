@@ -182,4 +182,4 @@ To get the detailed help of a function, please try:
 Get-Help Add-TaskbarItemJumpTask -Full
 ```
 
-For more code examples, please see the scripts under [Examples](./Examples) folder.
+For more code examples, please see the scripts under [Examples](./Examples) folder and an example project, [*Posh Work Time Tracker*](https://github.com/mdgrs-mei/posh-work-time-tracker).
