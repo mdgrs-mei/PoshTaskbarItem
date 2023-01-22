@@ -138,6 +138,15 @@ Stop-TaskbarItemFlashing $ti
 
 You can flash the taskbar icon to get more attention of the user.
 
+### Jump Task
+
+```powershell
+$jumpTask = New-TaskbarItemJumpTask -Title 'Jump Task 1' -Description 'Description is shown here' -IconResourcePath 'notepad.exe' -ApplicationPath 'notepad.exe' -Arguments 'test.txt'
+Add-TaskbarItemJumpTask $ti $jumpTask
+```
+
+JumpTask is a shortcut to an application that is shown in the context menu of the taskbar icon. Windows remembers the JumpTask settings so if the app is pined on the taskbar, it can also be executed when the app is not running.
+
 ### Changing Application Icons
 
 ![AppIcon](https://user-images.githubusercontent.com/81177095/185406314-b1657a74-fc2f-44a2-8d45-04639bf2f6be.png)
