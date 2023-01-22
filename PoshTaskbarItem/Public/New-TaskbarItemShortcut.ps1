@@ -24,7 +24,7 @@ Arguments passed to the application.
 Working directory of the application.
 
 .PARAMETER WindowStyle
-WindowStyle of the application launched by this shortcut. The value must be "NormalWindow", "Maximized" or "Minimized".
+WindowStyle of the application launched by this shortcut. The value must be 'NormalWindow', 'Maximized' or 'Minimized'.
 
 .INPUTS
 None.
@@ -33,7 +33,7 @@ None.
 None.
 
 .EXAMPLE
-New-TaskbarItemShortcut -Path "D:\app.lnk" -IconResourcePath "imageres.dll" -IconResourceIndex 15 -TargetPath "powershell.exe" -Arguments '-ExecutionPolicy Bypass -WindowStyle Hidden -File "D:\app.ps1"' -WorkingDirectory "D:\" -WindowStyle "Minimized"
+New-TaskbarItemShortcut -Path 'D:\app.lnk' -IconResourcePath 'imageres.dll' -IconResourceIndex 15 -TargetPath 'powershell.exe' -Arguments '-ExecutionPolicy Bypass -WindowStyle Hidden -File "D:\app.ps1"' -WorkingDirectory 'D:\' -WindowStyle 'Minimized'
 
 .LINK
 This command uses WshShortcut object internally:
@@ -42,7 +42,7 @@ https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-
 #>
 function New-TaskbarItemShortcut
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
@@ -55,7 +55,7 @@ function New-TaskbarItemShortcut
         [Int]$IconResourceIndex = 0,
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
-        [String]$TargetPath = "powershell.exe",
+        [String]$TargetPath = 'powershell.exe',
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
         [String]$Arguments,
@@ -64,17 +64,17 @@ function New-TaskbarItemShortcut
         [String]$WorkingDirectory,
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
-        [ValidateSet("NormalWindow", "Maximized", "Minimized")]
-        [String]$WindowStyle = "Minimized"
+        [ValidateSet('NormalWindow', 'Maximized', 'Minimized')]
+        [String]$WindowStyle = 'Minimized'
     )
 
     process
     {
         $wshWindowStyle = switch ($WindowStyle)
         {
-            "NormalWindow" {1}
-            "Maximized" {3}
-            "Minimized" {7}
+            'NormalWindow' {1}
+            'Maximized' {3}
+            'Minimized' {7}
         }
 
         # https://docs.microsoft.com/en-us/troubleshoot/windows-client/admin-development/create-desktop-shortcut-with-wsh

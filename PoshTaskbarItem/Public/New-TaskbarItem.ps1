@@ -24,7 +24,7 @@ None.
 PSCustomObject. An object that represents a TaskbarItem.
 
 .EXAMPLE
-New-TaskbarItem -Title "Window Title" -OnClicked {Write-Host "Hello."}
+New-TaskbarItem -Title 'Window Title' -OnClicked {Write-Host 'Hello.'}
 
 .EXAMPLE
 New-TaskbarItem -IconResourcePath imageres.dll -IconResourceIndex 8
@@ -35,7 +35,7 @@ New-TaskbarItem -IconResourcePath .\icon.png
 #>
 function New-TaskbarItem
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [OutputType([PSCustomObject])]
     param
     (
@@ -54,7 +54,7 @@ function New-TaskbarItem
 
     process
     {
-        $xamlPath = Join-Path $PSScriptRoot "..\Private\Window.xaml"
+        $xamlPath = Join-Path $PSScriptRoot '..\Private\Window.xaml'
         $xaml = [Xml](Get-Content $xamlPath)
         $nodeReader = (New-Object System.Xml.XmlNodeReader $xaml)
         $window = [System.Windows.Markup.XamlReader]::Load($nodeReader)

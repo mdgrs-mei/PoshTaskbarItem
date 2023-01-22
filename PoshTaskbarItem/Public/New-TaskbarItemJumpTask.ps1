@@ -36,7 +36,7 @@ None.
 PSCustomObject. An object that represents a JumpTask.
 
 .EXAMPLE
-$jumpTask = New-TaskbarItemJumpTask -Title "Notepad" -Description "Open Notepad" -IconResourcePath "notepad.exe" -ApplicationPath "notepad.exe" -Arguments "D:\test.txt"
+$jumpTask = New-TaskbarItemJumpTask -Title 'Notepad' -Description 'Open Notepad' -IconResourcePath 'notepad.exe' -ApplicationPath 'notepad.exe' -Arguments 'D:\test.txt'
 
 .LINK
 https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumptask
@@ -44,7 +44,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumptask
 #>
 function New-TaskbarItemJumpTask
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(ValueFromPipelineByPropertyName=$true)]

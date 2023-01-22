@@ -5,12 +5,12 @@ Add-Type -AssemblyName PresentationFramework
 function IsIcoConvertableFile($filePath)
 {
     $supportedExtensions = @(
-        ".png",
-        ".bmp",
-        ".tif",
-        ".tiff"
-        ".gif",
-        ".jpg"
+        '.png',
+        '.bmp',
+        '.tif',
+        '.tiff'
+        '.gif',
+        '.jpg'
     )
 
     $ext = [System.IO.Path]::GetExtension($filePath)
@@ -74,13 +74,13 @@ function CreateIconFromImage($image)
 
 
 # https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-deleteobject
-Add-Type -MemberDefinition @"
+Add-Type -MemberDefinition @'
 [DllImport("gdi32.dll")]
 public static extern bool DeleteObject(IntPtr hObject);
-"@ -Namespace PoshTaskbarItem -Name Win32DeleteObject
+'@ -Namespace PoshTaskbarItem -Name Win32DeleteObject
 
 # https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extracticonexa
-Add-Type -TypeDefinition @"
+Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 
@@ -113,7 +113,7 @@ public class IconExtractor
 }
 
 }
-"@
+'@
 
 function CreateBitmapSourceFromIconResource($filePath, $iconIndex)
 {
@@ -178,7 +178,7 @@ function GetIconResourceFullPath($iconResourcePath)
         if ($pathInfo)
         {
             $iconResourceFullPath = $pathInfo.Path
-            $icoPath = [System.IO.Path]::ChangeExtension($iconResourceFullPath, ".ico")
+            $icoPath = [System.IO.Path]::ChangeExtension($iconResourceFullPath, '.ico')
             if (Test-Path $icoPath)
             {
                 # .ico file already exists

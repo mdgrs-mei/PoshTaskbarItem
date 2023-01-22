@@ -16,7 +16,7 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-Set-TaskbarItemOverlayBadge $taskbarItem -Text "5"
+Set-TaskbarItemOverlayBadge $taskbarItem -Text '5'
 Clear-TaskbarItemOverlay $taskbarItem
 
 #>

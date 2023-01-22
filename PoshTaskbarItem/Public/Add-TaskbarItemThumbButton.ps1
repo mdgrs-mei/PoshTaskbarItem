@@ -19,7 +19,7 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-$thumbButton = New-TaskbarItemThumbButton -Description "Open Folder" -IconResourcePath imageres.dll -IconResourceIndex 3 -OnClicked {explorer.exe /root,D:\}
+$thumbButton = New-TaskbarItemThumbButton -Description 'Open Folder' -IconResourcePath imageres.dll -IconResourceIndex 3 -OnClicked {explorer.exe /root,D:\}
 Add-TaskbarItemThumbButton -InputObject $taskbarItem -ThumbButton $thumbButton
 
 #>

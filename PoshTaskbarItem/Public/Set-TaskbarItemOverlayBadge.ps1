@@ -36,7 +36,7 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-Set-TaskbarItemOverlayBadge $taskbarItem -Text "3" -BadgeSize 14 -BackgroundColor MediumPurple
+Set-TaskbarItemOverlayBadge $taskbarItem -Text '3' -BadgeSize 14 -BackgroundColor MediumPurple
 
 .LINK
 https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.taskbariteminfo.overlay
@@ -44,7 +44,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.taskbariteminfo
 #>
 function Set-TaskbarItemOverlayBadge
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
@@ -63,38 +63,38 @@ function Set-TaskbarItemOverlayBadge
         [Double]$FrameWidth = $BadgeSize * 0.09,
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
-        [ValidateSet("AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue",
-            "BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson",
-            "Cyan","DarkBlue","DarkCyan","DarkGoldenrod","DarkGray","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen",
-            "DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGray","DarkTurquoise",
-            "DarkViolet","DeepPink","DeepSkyBlue","DimGray","DodgerBlue","Firebrick","FloralWhite","ForestGreen","Fuchsia",
-            "Gainsboro","GhostWhite","Gold","Goldenrod","Gray","Green","GreenYellow","Honeydew","HotPink","IndianRed","Indigo",
-            "Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenrodYellow",
-            "LightGray","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGray","LightSteelBlue","LightYellow",
-            "Lime","LimeGreen","Linen","Magenta","Maroon","MediumAquamarine","MediumBlue","MediumOrchid","MediumPurple","MediumSeaGreen","MediumSlateBlue",
-            "MediumSpringGreen","MediumTurquoise","MediumVioletRed","MidnightBlue","MintCream","MistyRose","Moccasin","NavajoWhite","Navy","OldLace",
-            "Olive","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenrod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru",
-            "Pink","Plum","PowderBlue","Purple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","Silver",
-            "SkyBlue","SlateBlue","SlateGray","Snow","SpringGreen","SteelBlue","Tan","Teal","Thistle","Tomato","Transparent","Turquoise","Violet","Wheat",
-            "White","WhiteSmoke","Yellow","YellowGreen")]
-        [String]$BackgroundColor = "DeepPink",
+        [ValidateSet('AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','Bisque','Black','BlanchedAlmond','Blue',
+            'BlueViolet','Brown','BurlyWood','CadetBlue','Chartreuse','Chocolate','Coral','CornflowerBlue','Cornsilk','Crimson',
+            'Cyan','DarkBlue','DarkCyan','DarkGoldenrod','DarkGray','DarkGreen','DarkKhaki','DarkMagenta','DarkOliveGreen',
+            'DarkOrange','DarkOrchid','DarkRed','DarkSalmon','DarkSeaGreen','DarkSlateBlue','DarkSlateGray','DarkTurquoise',
+            'DarkViolet','DeepPink','DeepSkyBlue','DimGray','DodgerBlue','Firebrick','FloralWhite','ForestGreen','Fuchsia',
+            'Gainsboro','GhostWhite','Gold','Goldenrod','Gray','Green','GreenYellow','Honeydew','HotPink','IndianRed','Indigo',
+            'Ivory','Khaki','Lavender','LavenderBlush','LawnGreen','LemonChiffon','LightBlue','LightCoral','LightCyan','LightGoldenrodYellow',
+            'LightGray','LightGreen','LightPink','LightSalmon','LightSeaGreen','LightSkyBlue','LightSlateGray','LightSteelBlue','LightYellow',
+            'Lime','LimeGreen','Linen','Magenta','Maroon','MediumAquamarine','MediumBlue','MediumOrchid','MediumPurple','MediumSeaGreen','MediumSlateBlue',
+            'MediumSpringGreen','MediumTurquoise','MediumVioletRed','MidnightBlue','MintCream','MistyRose','Moccasin','NavajoWhite','Navy','OldLace',
+            'Olive','OliveDrab','Orange','OrangeRed','Orchid','PaleGoldenrod','PaleGreen','PaleTurquoise','PaleVioletRed','PapayaWhip','PeachPuff','Peru',
+            'Pink','Plum','PowderBlue','Purple','Red','RosyBrown','RoyalBlue','SaddleBrown','Salmon','SandyBrown','SeaGreen','SeaShell','Sienna','Silver',
+            'SkyBlue','SlateBlue','SlateGray','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Transparent','Turquoise','Violet','Wheat',
+            'White','WhiteSmoke','Yellow','YellowGreen')]
+        [String]$BackgroundColor = 'DeepPink',
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
-        [ValidateSet("AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque","Black","BlanchedAlmond","Blue",
-        "BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson",
-        "Cyan","DarkBlue","DarkCyan","DarkGoldenrod","DarkGray","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen",
-        "DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGray","DarkTurquoise",
-        "DarkViolet","DeepPink","DeepSkyBlue","DimGray","DodgerBlue","Firebrick","FloralWhite","ForestGreen","Fuchsia",
-        "Gainsboro","GhostWhite","Gold","Goldenrod","Gray","Green","GreenYellow","Honeydew","HotPink","IndianRed","Indigo",
-        "Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenrodYellow",
-        "LightGray","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGray","LightSteelBlue","LightYellow",
-        "Lime","LimeGreen","Linen","Magenta","Maroon","MediumAquamarine","MediumBlue","MediumOrchid","MediumPurple","MediumSeaGreen","MediumSlateBlue",
-        "MediumSpringGreen","MediumTurquoise","MediumVioletRed","MidnightBlue","MintCream","MistyRose","Moccasin","NavajoWhite","Navy","OldLace",
-        "Olive","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenrod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru",
-        "Pink","Plum","PowderBlue","Purple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","Silver",
-        "SkyBlue","SlateBlue","SlateGray","Snow","SpringGreen","SteelBlue","Tan","Teal","Thistle","Tomato","Transparent","Turquoise","Violet","Wheat",
-        "White","WhiteSmoke","Yellow","YellowGreen")]
-        [String]$ForegroundColor = "White"
+        [ValidateSet('AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','Bisque','Black','BlanchedAlmond','Blue',
+        'BlueViolet','Brown','BurlyWood','CadetBlue','Chartreuse','Chocolate','Coral','CornflowerBlue','Cornsilk','Crimson',
+        'Cyan','DarkBlue','DarkCyan','DarkGoldenrod','DarkGray','DarkGreen','DarkKhaki','DarkMagenta','DarkOliveGreen',
+        'DarkOrange','DarkOrchid','DarkRed','DarkSalmon','DarkSeaGreen','DarkSlateBlue','DarkSlateGray','DarkTurquoise',
+        'DarkViolet','DeepPink','DeepSkyBlue','DimGray','DodgerBlue','Firebrick','FloralWhite','ForestGreen','Fuchsia',
+        'Gainsboro','GhostWhite','Gold','Goldenrod','Gray','Green','GreenYellow','Honeydew','HotPink','IndianRed','Indigo',
+        'Ivory','Khaki','Lavender','LavenderBlush','LawnGreen','LemonChiffon','LightBlue','LightCoral','LightCyan','LightGoldenrodYellow',
+        'LightGray','LightGreen','LightPink','LightSalmon','LightSeaGreen','LightSkyBlue','LightSlateGray','LightSteelBlue','LightYellow',
+        'Lime','LimeGreen','Linen','Magenta','Maroon','MediumAquamarine','MediumBlue','MediumOrchid','MediumPurple','MediumSeaGreen','MediumSlateBlue',
+        'MediumSpringGreen','MediumTurquoise','MediumVioletRed','MidnightBlue','MintCream','MistyRose','Moccasin','NavajoWhite','Navy','OldLace',
+        'Olive','OliveDrab','Orange','OrangeRed','Orchid','PaleGoldenrod','PaleGreen','PaleTurquoise','PaleVioletRed','PapayaWhip','PeachPuff','Peru',
+        'Pink','Plum','PowderBlue','Purple','Red','RosyBrown','RoyalBlue','SaddleBrown','Salmon','SandyBrown','SeaGreen','SeaShell','Sienna','Silver',
+        'SkyBlue','SlateBlue','SlateGray','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Transparent','Turquoise','Violet','Wheat',
+        'White','WhiteSmoke','Yellow','YellowGreen')]
+        [String]$ForegroundColor = 'White'
     )
 
     process
@@ -130,7 +130,7 @@ function Set-TaskbarItemOverlayBadge
         $bitmap = New-Object System.Windows.Media.Imaging.RenderTargetBitmap $parameters.BadgeSize, $parameters.BadgeSize, $wpfDpi, $wpfDpi, ([System.Windows.Media.PixelFormats]::Default)
         $rect = New-Object System.Windows.Rect 0, 0, $parameters.BadgeSize, $parameters.BadgeSize
         $control = New-Object System.Windows.Controls.ContentControl
-        $control.ContentTemplate = $InputObject.Window.Resources["OverlayBadge"]
+        $control.ContentTemplate = $InputObject.Window.Resources['OverlayBadge']
         $control.Content = $parameters
         $control.Arrange($rect)
         $bitmap.Render($control)

@@ -22,12 +22,12 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-Set-TaskbarItemTimerFunction -InputObject $taskbarItem -ScriptBlock {Write-Host "Hello"} -IntervalInMillisecond 1000
+Set-TaskbarItemTimerFunction -InputObject $taskbarItem -ScriptBlock {Write-Host 'Hello'} -IntervalInMillisecond 1000
 
 #>
 function Set-TaskbarItemTimerFunction
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]

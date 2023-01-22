@@ -30,7 +30,7 @@ None.
 PSCustomObject. An object that represents a ThumbButton.
 
 .EXAMPLE
-$thumbButton = New-TaskbarItemThumbButton -Description "Open Folder" -IconResourcePath imageres.dll -IconResourceIndex 3 -OnClicked {explorer.exe /root,D:\}
+$thumbButton = New-TaskbarItemThumbButton -Description 'Open Folder' -IconResourcePath imageres.dll -IconResourceIndex 3 -OnClicked {explorer.exe /root,D:\}
 
 .LINK
 https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.thumbbuttoninfo
@@ -38,7 +38,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.thumbbuttoninfo
 #>
 function New-TaskbarItemThumbButton
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [OutputType([PSCustomObject])]
     param
     (

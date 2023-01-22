@@ -19,7 +19,7 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-$jumpTask = New-TaskbarItemJumpTask -Title "JumpTask"
+$jumpTask = New-TaskbarItemJumpTask -Title 'JumpTask'
 Add-TaskbarItemJumpTask -InputObject $taskbarItem -JumpTask $jumpTask
 
 #>

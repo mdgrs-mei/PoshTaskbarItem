@@ -30,7 +30,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.taskbariteminfo
 #>
 function Set-TaskbarItemOverlayIcon
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]

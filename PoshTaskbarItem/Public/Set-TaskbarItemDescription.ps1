@@ -19,12 +19,12 @@ None.
 
 .EXAMPLE
 $taskbarItem = New-TaskbarItem
-Set-TaskbarItemDescription -InputObject $taskbarItem -Description "This is a description"
+Set-TaskbarItemDescription -InputObject $taskbarItem -Description 'This is a description'
 
 #>
 function Set-TaskbarItemDescription
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]

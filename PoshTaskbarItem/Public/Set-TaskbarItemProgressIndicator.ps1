@@ -36,7 +36,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.taskbariteminfo
 #>
 function Set-TaskbarItemProgressIndicator
 {
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     param
     (
         [Parameter(Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
@@ -47,8 +47,8 @@ function Set-TaskbarItemProgressIndicator
         [Double]$Progress = 0.0,
 
         [Parameter(ValueFromPipelineByPropertyName=$true)]
-        [ValidateSet("Error", "Indeterminate", "None", "Normal", "Paused")]
-        [String]$State = "None"
+        [ValidateSet('Error', 'Indeterminate', 'None', 'Normal', 'Paused')]
+        [String]$State = 'None'
     )
 
     process

@@ -1,4 +1,4 @@
-﻿Add-Type -TypeDefinition @"
+﻿Add-Type -TypeDefinition @'
 
 namespace PoshTaskbarItem {
 
@@ -24,7 +24,7 @@ public class DelegateCommand : System.Windows.Input.ICommand
 }
 
 }
-"@
+'@
 
 function CreateCommandFromScriptBlock($scriptBlock)
 {

@@ -1,4 +1,4 @@
-Add-Type -TypeDefinition @"
+Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 
@@ -42,15 +42,15 @@ public class FlashWindow
 }
 
 }
-"@
+'@
 
-Add-Type -MemberDefinition @"
+Add-Type -MemberDefinition @'
 [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr hWnd);
-"@ -Namespace PoshTaskbarItem -Name Win32GetDpiForWindow
+'@ -Namespace PoshTaskbarItem -Name Win32GetDpiForWindow
 
-Add-Type -MemberDefinition @"
+Add-Type -MemberDefinition @'
 [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-"@ -Namespace PoshTaskbarItem -Name Win32ShowWindow
+'@ -Namespace PoshTaskbarItem -Name Win32ShowWindow
 
 function FlashWindow($mainWindowHandle, $rateInMillisecond, $count)
 {
