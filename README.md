@@ -140,6 +140,8 @@ You can flash the taskbar icon to get more attention of the user.
 
 ### Jump Task
 
+![JumpTask](https://user-images.githubusercontent.com/81177095/213912726-f167fca8-5d9e-4546-a2e1-0a322be2aea9.png)
+
 ```powershell
 $jumpTask = New-TaskbarItemJumpTask -Title 'Jump Task 1' -Description 'Description is shown here' -IconResourcePath 'notepad.exe' -ApplicationPath 'notepad.exe' -Arguments 'test.txt'
 Add-TaskbarItemJumpTask $ti $jumpTask
