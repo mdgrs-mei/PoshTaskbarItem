@@ -1,10 +1,10 @@
 ﻿Import-Module $PSScriptRoot\..\..\PoshTaskbarItem -Force
 
-Describe "New-TaskbarItemThumbButton" {
-    It "should store parameters" {
+Describe 'New-TaskbarItemThumbButton' {
+    It 'should store parameters' {
         $params = @{
-            Description = "Test Description"
-            IconResourcePath = "imageres.dll"
+            Description = 'Test Description'
+            IconResourcePath = 'imageres.dll'
             IconResourceIndex = 5
             OnClicked = {}
             KeepOpenWhenClicked = $true

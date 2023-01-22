@@ -5,8 +5,8 @@ BeforeAll {
     $jumpTask = New-TaskbarItemJumpTask -Title $testString
 }
 
-Describe "Add-TaskbarItemJumpTask" {
-    It "should store a JumpTask to TaskbarItem" {
+Describe 'Add-TaskbarItemJumpTask' {
+    It 'should store a JumpTask to TaskbarItem' {
         Add-TaskbarItemJumpTask -InputObject $ti -JumpTask $jumpTask
         $ti.JumpList.JumpItems.Item(0) | Should -Be $jumpTask.JumpTask
     }

@@ -1,14 +1,14 @@
 ﻿Import-Module $PSScriptRoot\..\..\PoshTaskbarItem -Force
 
-Describe "New-TaskbarItemJumpTask" {
-    It "should store basic parameters" {
+Describe 'New-TaskbarItemJumpTask' {
+    It 'should store basic parameters' {
         $params = @{
-            Title = "Test Title"
-            Description = "Test Description"
-            ApplicationPath = "D:\testapp.exe"
-            Arguments = "-TestArg"
-            WorkingDirectory = "D:\"
-            CustomCategory = "Test Category"
+            Title = 'Test Title'
+            Description = 'Test Description'
+            ApplicationPath = 'D:\testapp.exe'
+            Arguments = '-TestArg'
+            WorkingDirectory = 'D:\'
+            CustomCategory = 'Test Category'
         }
         $jumpTask = New-TaskbarItemJumpTask @params
 
@@ -20,7 +20,7 @@ Describe "New-TaskbarItemJumpTask" {
         $jumpTask.JumpTask.CustomCategory | Should -Be $params.CustomCategory
     }
     
-    It "should support icon resources in PATH env variable" {
+    It 'should support icon resources in PATH env variable' {
         $imageresFullPath = (Get-Command -Type Application imageres.dll).Source
         $iconResourceIndex = 5
         $jumpTask = New-TaskbarItemJumpTask -IconResourcePath imageres.dll -IconResourceIndex $iconResourceIndex
@@ -29,9 +29,9 @@ Describe "New-TaskbarItemJumpTask" {
         $jumpTask.JumpTask.IconResourceIndex | Should -Be $iconResourceIndex
     }
 
-    It "should support icon image files" {
+    It 'should support icon image files' {
         $imagePath = (Resolve-Path "$PSScriptRoot\..\Icons\TestIcon1.png").Path
-        $icoPath = [IO.Path]::ChangeExtension($imagePath, ".ico")
+        $icoPath = [IO.Path]::ChangeExtension($imagePath, '.ico')
         $jumpTask = New-TaskbarItemJumpTask -IconResourcePath $imagePath
 
         $jumpTask.JumpTask.IconResourcePath | Should -Be $icoPath
@@ -39,7 +39,7 @@ Describe "New-TaskbarItemJumpTask" {
         Remove-Item $icoPath -Force
     }
 
-    It "should support ico files" {
+    It 'should support ico files' {
         $icoPath = (Resolve-Path "$PSScriptRoot\..\Icons\TestIcon2.ico").Path
         $jumpTask = New-TaskbarItemJumpTask -IconResourcePath $icoPath
 

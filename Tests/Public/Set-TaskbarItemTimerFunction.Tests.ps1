@@ -4,22 +4,22 @@ BeforeAll {
     $ti = New-TaskbarItem
 }
 
-Describe "Set-TaskbarItemTimerFunction" {
-    It "should create a timer" {
+Describe 'Set-TaskbarItemTimerFunction' {
+    It 'should create a timer' {
         Set-TaskbarItemTimerFunction -InputObject $ti -IntervalInMillisecond 1000 -ScriptBlock {
-            "Hi."
+            'Hi.'
         }
 
         $ti.Timer | Should -Not -BeNullOrEmpty
     }
 
-    It "should be able to call twice" {
+    It 'should be able to call twice' {
         Set-TaskbarItemTimerFunction -InputObject $ti -IntervalInMillisecond 1000 -ScriptBlock {
-            "Hi."
+            'Hi.'
         }
 
         Set-TaskbarItemTimerFunction -InputObject $ti -IntervalInMillisecond 1000 -ScriptBlock {
-            "Hi again."
+            'Hi again.'
         }
 
         $ti.Timer | Should -Not -BeNullOrEmpty

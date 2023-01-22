@@ -4,8 +4,8 @@ BeforeAll {
     $ti = New-TaskbarItem
 }
 
-Describe "Start-TaskbarItemFlashing" {
-    It "should return without any error" {
+Describe 'Start-TaskbarItemFlashing' {
+    It 'should return without any error' {
         Start-TaskbarItemFlashing -InputObject $ti -Count 3
     }
 }
