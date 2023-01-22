@@ -8,7 +8,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Run tests
+
+      - name: Run tests on pwsh
         shell: pwsh
+        run: |
+          & Tests\RunTests.ps1
+
+      - name: Run tests on powershell
+        shell: powershell
         run: |
           & Tests\RunTests.ps1
