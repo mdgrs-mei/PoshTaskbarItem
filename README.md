@@ -22,7 +22,7 @@ The following code creates a taskbar icon showing a decreasing counter as an ove
 
 ```powershell
 $counter = 10
-$ti = New-TaskbarItem -Title "Countdown" -OnClicked {
+$ti = New-TaskbarItem -Title 'Countdown' -OnClicked {
     $script:counter = 10
     UpdateUi
 }
@@ -34,7 +34,7 @@ Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
 
 function UpdateUi
 {
-    Set-TaskbarItemOverlayBadge $ti -Text $script:counter -BackgroundColor "LightSeaGreen"
+    Set-TaskbarItemOverlayBadge $ti -Text $script:counter -BackgroundColor 'LightSeaGreen'
     Set-TaskbarItemProgressIndicator $ti -Progress ($script:counter/10) -State Paused
 }
 
@@ -88,7 +88,7 @@ $ti = New-TaskbarItem
 ![Description](https://user-images.githubusercontent.com/81177095/184888853-8fa8ada8-c7a4-4845-ad49-817cd8fe6338.png)
 
 ```powershell
-Set-TaskbarItemDescription $ti "Description is shown here"
+Set-TaskbarItemDescription $ti 'Description is shown here'
 ```
 
 Description is a text displayed on top of the taskbar preview window. It is shown by a mouse over.
@@ -98,8 +98,8 @@ Description is a text displayed on top of the taskbar preview window. It is show
 ![ThumbButton](https://user-images.githubusercontent.com/81177095/184888921-283873ae-a1a6-4505-a656-022be39c04c7.png)
 
 ```powershell
-$thumbButton = New-TaskbarItemThumbButton -Description "Increment Badge Counter" -IconResourcePath "imageres.dll" -IconResourceIndex 101 -OnClicked {
-    Write-Host "Clicked."
+$thumbButton = New-TaskbarItemThumbButton -Description 'Increment Badge Counter' -IconResourcePath 'imageres.dll' -IconResourceIndex 101 -OnClicked {
+    Write-Host 'Clicked.'
 }
 Add-TaskbarItemThumbButton $ti $thumbButton
 ```
@@ -111,7 +111,7 @@ ThumbButtons are the buttons displayed at the bottom of the preview window. You 
 ![OverlayBadge](https://user-images.githubusercontent.com/81177095/184888975-5f6d0a5b-7120-4b42-8130-36c92ed317f3.png)
 
 ```powershell
-Set-TaskbarItemOverlayBadge $ti -Text "2"
+Set-TaskbarItemOverlayBadge $ti -Text '2'
 ```
 
 OverlayBadge is a text badge displayed on the taskbar icon. The badge size and the font size are changeable by parameters but 2 characters might be the maximum considering the space.
@@ -154,7 +154,7 @@ JumpTask is a shortcut to an application that is shown in the context menu of th
 If you run a script that uses *PoshTaskbarItem*, the PowerShell icon is shown on the taskbar by default. If you want to assign a new icon to your script, you have to create a shortcut that runs your script. You would also want to hide the PowerShell console so the command to create the shortcut will be like this:
 
 ```powershell
-New-TaskbarItemShortcut -Path "D:\YourApp.lnk" -IconResourcePath "imageres.dll" -IconResourceIndex 144 -TargetPath "powershell.exe" -Arguments "-ExecutionPolicy Bypass -WindowStyle Hidden -File D:\YourScript.ps1" -WindowStyle Minimized
+New-TaskbarItemShortcut -Path 'D:\YourApp.lnk' -IconResourcePath 'imageres.dll' -IconResourceIndex 144 -TargetPath 'powershell.exe' -Arguments '-ExecutionPolicy Bypass -WindowStyle Hidden -File D:\YourScript.ps1' -WindowStyle Minimized
 ```
 
 ### IconResourcePath
@@ -171,7 +171,7 @@ On Windows 10 or 11, `imageres.dll` or `shell32.dll` has a lot of useful icons. 
 
 ```powershell
 Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
-    Write-Host "Tick"
+    Write-Host 'Tick'
 }
 ```
 
