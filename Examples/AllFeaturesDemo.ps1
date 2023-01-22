@@ -4,16 +4,16 @@ Import-Module $PSScriptRoot\..\PoshTaskbarItem -Force
 # Create a shortcut on the Desktop to assign an icon to this demo app.
 $params = @{
     Path = "$env:userprofile\Desktop\AllFeaturesDemo.lnk"
-    IconResourcePath = "imageres.dll"
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 144
-    TargetPath = "powershell.exe"
-    Arguments = ("-ExecutionPolicy Bypass -WindowStyle Hidden -File `"{0}`"" -f $MyInvocation.MyCommand.Path)
-    WindowStyle = "Minimized"
+    TargetPath = 'powershell.exe'
+    Arguments = ('-ExecutionPolicy Bypass -WindowStyle Hidden -File "{0}"' -f $MyInvocation.MyCommand.Path)
+    WindowStyle = 'Minimized'
 }
 New-TaskbarItemShortcut @params
 #>
 
-$description = "Description is shown here"
+$description = 'Description is shown here'
 $clickCounter = 0
 $badgeCounter = 0
 $progress = 0.0
@@ -21,8 +21,8 @@ $showProgress = $false
 
 # Create a new TaskbarItem
 $params = @{
-    Title = "All Features Demo"
-    IconResourcePath = "imageres.dll"
+    Title = 'All Features Demo'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 144
     OnClicked = {
         # Counts click count and show it in the description
@@ -38,8 +38,8 @@ Set-TaskbarItemDescription $ti $description
 
 # Create ThumbButtons
 $params = @{
-    Description = "Increment Badge Counter"
-    IconResourcePath = "imageres.dll"
+    Description = 'Increment Badge Counter'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 101
     KeepOpenWhenClicked = $true
     HideBackground = $true
@@ -51,8 +51,8 @@ $params = @{
 $thumbButton1 = New-TaskbarItemThumbButton @params
 
 $params = @{
-    Description = "Show Overlay Icon"
-    IconResourcePath = "imageres.dll"
+    Description = 'Show Overlay Icon'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 79
     KeepOpenWhenClicked = $false
     HideBackground = $false
@@ -63,8 +63,8 @@ $params = @{
 $thumbButton2 = New-TaskbarItemThumbButton @params
 
 $params = @{
-    Description = "Toggle Progress Indicator"
-    IconResourcePath = "imageres.dll"
+    Description = 'Toggle Progress Indicator'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 147
     KeepOpenWhenClicked = $false
     HideBackground = $false
@@ -75,8 +75,8 @@ $params = @{
 $thumbButton3 = New-TaskbarItemThumbButton @params
 
 $params = @{
-    Description = "Flash Taskbar Icon"
-    IconResourcePath = "imageres.dll"
+    Description = 'Flash Taskbar Icon'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 204
     KeepOpenWhenClicked = $false
     HideBackground = $false
@@ -110,30 +110,30 @@ Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
 
 # Create JumpTasks
 $params = @{
-    Title = "Jump Task 1"
-    Description = "Description is shown here"
-    IconResourcePath = "notepad.exe"
-    ApplicationPath = "notepad.exe"
+    Title = 'Jump Task 1'
+    Description = 'Description is shown here'
+    IconResourcePath = 'notepad.exe'
+    ApplicationPath = 'notepad.exe'
     Arguments = $MyInvocation.MyCommand.Path
-    CustomCategory = "Custom Category"
+    CustomCategory = 'Custom Category'
 }
 $jumpTask1 = New-TaskbarItemJumpTask @params
 
 $params = @{
-    Title = "Jump Task 2"
-    Description = "Description is shown here"
-    IconResourcePath = "imageres.dll"
+    Title = 'Jump Task 2'
+    Description = 'Description is shown here'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 4
-    ApplicationPath = "explorer.exe"
-    CustomCategory = "Custom Category"
+    ApplicationPath = 'explorer.exe'
+    CustomCategory = 'Custom Category'
 }
 $jumpTask2 = New-TaskbarItemJumpTask @params
 
 $params = @{
-    Title = "Jump Task 3"
-    Description = "Description is shown here"
-    IconResourcePath = "powershell.exe"
-    ApplicationPath = "powershell.exe"
+    Title = 'Jump Task 3'
+    Description = 'Description is shown here'
+    IconResourcePath = 'powershell.exe'
+    ApplicationPath = 'powershell.exe'
 }
 $jumpTask3 = New-TaskbarItemJumpTask @params
 

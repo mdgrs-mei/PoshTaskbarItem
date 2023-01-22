@@ -1,8 +1,8 @@
 Import-Module $PSScriptRoot\..\PoshTaskbarItem -Force
 
 $params = @{
-    Title = "MemoryMonitor"
-    IconResourcePath = "imageres.dll"
+    Title = 'MemoryMonitor'
+    IconResourcePath = 'imageres.dll'
     IconResourceIndex = 144
     OnClicked = {
         taskmgr
@@ -19,10 +19,10 @@ Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 3000 {
     $top5 = $processes[0..4]    
     $processNames = $top5.Name -join "`n"
 
-    $color = "LightSeaGreen"
+    $color = 'LightSeaGreen'
     if ($usage -ge 50)
     {
-        $color = "DeepPink"
+        $color = 'DeepPink'
     }
 
     Set-TaskbarItemOverlayBadge $ti -Text $usage -FontSize 10 -BackgroundColor $color

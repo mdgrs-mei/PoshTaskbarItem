@@ -2,7 +2,7 @@ Import-Module $PSScriptRoot\..\PoshTaskbarItem -Force
 
 $counter = 10
 
-$ti = New-TaskbarItem -Title "Countdown" -OnClicked {
+$ti = New-TaskbarItem -Title 'Countdown' -OnClicked {
     $script:counter = 10
     UpdateUi
 }
@@ -14,7 +14,7 @@ Set-TaskbarItemTimerFunction $ti -IntervalInMillisecond 1000 {
 
 function UpdateUi
 {
-    Set-TaskbarItemOverlayBadge $ti -Text $script:counter -BackgroundColor "LightSeaGreen"
+    Set-TaskbarItemOverlayBadge $ti -Text $script:counter -BackgroundColor 'LightSeaGreen'
     Set-TaskbarItemProgressIndicator $ti -Progress ($script:counter/10) -State Paused
 }
 
