@@ -5,7 +5,7 @@ $params = @{
     IconResourcePath = 'imageres.dll'
     IconResourceIndex = 144
     OnClicked = {
-        taskmgr
+        Start-Process 'Taskmgr.exe'
     }
 }
 
