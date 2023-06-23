@@ -8,6 +8,8 @@
 
 [![Pester Test](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml/badge.svg)](https://github.com/mdgrs-mei/PoshTaskbarItem/actions/workflows/pester-test.yml)
 
+[![Hashnode](https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://mdgrs.hashnode.dev/taskbar-toolmaking-in-powershell)
+
 *PoshTaskbarItem* is a PowerShell module that helps you make a simple UI for your script on the Windows taskbar.
 
 ![Demo](https://user-images.githubusercontent.com/81177095/184648943-38273e0f-048f-4f4f-b335-f43d3e173619.gif)
